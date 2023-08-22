@@ -22,6 +22,8 @@ namespace projetoICG3bim
         int coluna = 0;
         int linha = 0;
         bool verf = false;
+        bool sobreposta = false;
+        bool remove = false;
         Color cor;
         Bitmap imgCozinha = new Bitmap("C:\\Users\\emman\\Pictures\\Imagem_A.jpg");
         Bitmap imgPanela = new Bitmap("C:\\Users\\emman\\Pictures\\Panela.jpg");
@@ -55,6 +57,10 @@ namespace projetoICG3bim
                 }
             }
             pictureBox1.Image = imgnova;
+
+            if(sobreposta == true)
+                pictureBox4.Image = imgnova;
+
             imgnova.Save("TESTE3.jpg");
         }
 
@@ -76,6 +82,7 @@ namespace projetoICG3bim
 
         private void button2_Click(object sender, EventArgs e)
         {
+            remove = true;
             Bitmap imgnova = tiraAmarelo();
             pictureBox2.Image = imgnova;
             imgnova.Save("TESTE3.jpg");
@@ -124,6 +131,10 @@ namespace projetoICG3bim
             }
 
             imgnova.Save("TESTE2.jpg");
+
+            if (sobreposta == true)
+                pictureBox5.Image = imgnova;
+
             pictureBox1.Image = imgnova;
         }
 
@@ -191,8 +202,15 @@ namespace projetoICG3bim
         private void button4_Click(object sender, EventArgs e)
         {
             verf = true;
-            Bitmap img_resultado = SobrepoeImagem();
-            pictureBox1.Image = img_resultado;
+            sobreposta = true;
+            if (remove == true) { 
+                Bitmap img_resultado = SobrepoeImagem();
+                pictureBox1.Image = img_resultado;
+                pictureBox3.Image = img_resultado;
+            }else
+                MessageBox.Show("REMOVA O FUNDO!");
+
+            
         }
     }
 }
