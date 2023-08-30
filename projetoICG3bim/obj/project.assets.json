@@ -8,23 +8,24 @@
     "net5.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\aluno\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\emman\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aluno\\Downloads\\ICG3BIM-main\\ICG3BIM-main\\projetoICG3bim\\projetoICG3bim.csproj",
+      "projectUniqueName": "D:\\Programação\\C#\\ICG3BIM-main\\ICG3BIM-main\\projetoICG3bim\\projetoICG3bim.csproj",
       "projectName": "projetoICG3bim",
-      "projectPath": "C:\\Users\\aluno\\Downloads\\ICG3BIM-main\\ICG3BIM-main\\projetoICG3bim\\projetoICG3bim.csproj",
-      "packagesPath": "C:\\Users\\aluno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aluno\\Downloads\\ICG3BIM-main\\ICG3BIM-main\\projetoICG3bim\\obj\\",
+      "projectPath": "D:\\Programação\\C#\\ICG3BIM-main\\ICG3BIM-main\\projetoICG3bim\\projetoICG3bim.csproj",
+      "packagesPath": "C:\\Users\\emman\\.nuget\\packages\\",
+      "outputPath": "D:\\Programação\\C#\\ICG3BIM-main\\ICG3BIM-main\\projetoICG3bim\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\aluno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\emman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -67,7 +68,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.214\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -69,7 +69,7 @@ namespace projetoICG3bim
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pictureBox3.Location = new System.Drawing.Point(969, 578);
+            this.pictureBox3.Location = new System.Drawing.Point(969, 79);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(366, 231);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -89,7 +89,7 @@ namespace projetoICG3bim
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pictureBox5.Location = new System.Drawing.Point(969, 52);
+            this.pictureBox5.Location = new System.Drawing.Point(969, 553);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(366, 231);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

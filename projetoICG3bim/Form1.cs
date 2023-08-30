@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace projetoICG3bim
@@ -21,14 +22,19 @@ namespace projetoICG3bim
 
         int coluna = 0;
         int linha = 0;
-        bool verf = false;
-        bool sobreposta = false;
-        bool remove = false;
         Color cor;
-        Bitmap imgCozinha = new Bitmap("C:\\Users\\aluno\\Pictures\\Imagem_A.jpg");
-        Bitmap imgPanela = new Bitmap("C:\\Users\\aluno\\Pictures\\Panela.jpg");
+        Bitmap imgCozinha = new Bitmap("C:\\Users\\emman\\Pictures\\Imagem_A.jpg");
+        Bitmap imgPanela = new Bitmap("C:\\Users\\emman\\Pictures\\Panela.jpg");
 
         //-------------------- IMAGEM CINZA --------------------
+
+        public Color CriaCor(byte a, byte r, byte g, byte b)
+        {
+            Color Cor = new Color();
+            Cor = Color.FromArgb(a, r, g, b);
+            return Cor;
+        }
+
 
         private Bitmap Cinza ()
         {
@@ -41,30 +47,24 @@ namespace projetoICG3bim
             {
                 for (int j = 0; j <= linha - 1; j++)
                 {
-                    double r = imgCozinha.GetPixel(i, j).R;
-                    double g = imgCozinha.GetPixel(i, j).G;
-                    double b = imgCozinha.GetPixel(i, j).B;
+                    byte r = imgCozinha.GetPixel(i, j).R;
+                    byte g = imgCozinha.GetPixel(i, j).G;
+                    byte b = imgCozinha.GetPixel(i, j).B;
 
-                    double K = r * 0.3 + g * 0.59 + b * 0.11;
+                    byte K = (byte)(r * 0.3 + g * 0.59 + b * 0.11);
 
-                    cor = Color.FromArgb((int)K, (int)K, (int)K);
+                    Color cor = CriaCor(255, K, K, K);
                     imgnova.SetPixel(i, j, cor);
 
                 }
             }
+            imgnova.Save("C:\\users\\emman\\Pictures\\IMG_CINZA.jpg");
             return imgnova;
         }
 
         //---------------------------------------------------------------------
 
         private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            /*****************************************/
-        }
-
-        //---------------------------------------------------------------------
-
-        private void pictureBox2_Click(object sender, EventArgs e)
         {
             /*****************************************/
         }
@@ -89,23 +89,23 @@ namespace projetoICG3bim
             {
                 for (int j = 0; j <= linha - 1; j++)
                 {
-                    double r = imgCozinha.GetPixel(i, j).R;
-                    double g = imgCozinha.GetPixel(i, j).G;
-                    double b = imgCozinha.GetPixel(i, j).B;
+                    byte r = imgCozinha.GetPixel(i, j).R;
+                    byte g = imgCozinha.GetPixel(i, j).G;
+                    byte b = imgCozinha.GetPixel(i, j).B;
 
-                    double K = r * 0.3 + g * 0.59 + b * 0.11;
+                    byte K = (byte)(r * 0.3 + g * 0.59 + b * 0.11);
 
                     if (K >= 127)
                         K = 255;
                     else
                         K = 0;
-                    
-                    cor = Color.FromArgb((int)K, (int)K, (int)K);
+
+                    Color cor = CriaCor(255, K, K, K);
                     imgnova.SetPixel(i, j, cor);
 
                 }
             }
-
+            imgnova.Save("C:\\users\\emman\\Pictures\\IMG_B&W.jpg");
             return imgnova;
 
         }
@@ -122,17 +122,17 @@ namespace projetoICG3bim
             {
                 for (int j = 0; j <= linha - 1; j++)
                 {
-                    int r = imgPanela.GetPixel(i, j).R;
-                    int g = imgPanela.GetPixel(i, j).G;
-                    int b = imgPanela.GetPixel(i, j).B;
+                    byte r = imgPanela.GetPixel(i, j).R;
+                    byte g = imgPanela.GetPixel(i, j).G;
+                    byte b = imgPanela.GetPixel(i, j).B;
 
-                    if ((r + g)/2 >= 220 && (r+g+b)/3 <= 230)
+                    if ((r + g) / 2 >= 220 && (r + g + b) / 3 <= 230)
                     {
-                        imgnova.SetPixel(i, j, Color.FromArgb(0, 0, 0, 0));
+                        imgnova.SetPixel(i, j, CriaCor(0, 0, 0, 0));
                     }
                     else
                     {
-                        cor = Color.FromArgb(r, g, b);
+                        cor = CriaCor(255, r, g, b);
                         imgnova.SetPixel(i, j, cor);
                     }
 
@@ -165,6 +165,7 @@ namespace projetoICG3bim
                     }
                 }
             }
+            img_resultado.Save("C:\\users\\emman\\Pictures\\IMG_SOBREPOSTA.jpg");
             return img_resultado;
             
         }
